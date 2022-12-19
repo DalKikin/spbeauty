@@ -5,19 +5,19 @@ import RemoveIcon from '../../../../../Icons/RemoveIcon';
 import IconOnlyButton from '../../../../../Components/IconOnlyButton.js';
 
 const Option = styled.div`
-    outline: none;
-    border-radius: 0px;
-    border: solid #152842 1px;
-    background-color: #D9E2EF;
-    color: #666787;
+    color: #0F172A;
 `;
 
 function ListElement(props) {
     return (
-        <div className='d-flex flex-row align-items-center align-self-stretch gap-2'>
-            <Option className='flex-grow-1 p-2'>{props.children}</Option>
-            <SecondaryButton minWidth='0'>Ред.</SecondaryButton>
-            <SecondaryButton minWidth='0'>Удл.</SecondaryButton>
+    <div>
+        <div className='d-flex flex-row justify-content-between gap-1 my-1'>
+            <Option className='flex-row-1'>{props.children}</Option>
+            <div className='d-flex flex-row gap-2'>
+            <IconOnlyButton icon={<EditIcon/>}/>
+            <IconOnlyButton icon={<RemoveIcon/>}/>
+            </div>
+        </div>
         </div>
     );
 }
